@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+PYTHON="${PYTHON:-.venv/bin/python}"
+if [ ! -x "$PYTHON" ]; then PYTHON="$(command -v python3)"; fi
+"$PYTHON" -m pytest --cov --cov-branch -q

@@ -1,0 +1,19 @@
+# mem0-mcp
+
+> A FastMCP HTTP server wrapping mem0ai and a local Qdrant vector store, exposing add/search/list/delete memory tools over the Model Context Protocol. Python 3.11, shipped as a Docker image.
+
+## Docs
+
+- [README](README.md): project overview, Docker quickstart, configuration, and architecture
+- [Contributing guide](CONTRIBUTING.md): local setup, test and build commands, PR checklist
+- [Security policy](SECURITY.md): how to report vulnerabilities
+- [Claude Code project conventions](CLAUDE.md): coding conventions, required skills, engineering principles
+
+## Examples
+
+- [docker-compose.yml](docker-compose.yml): Qdrant + MCP server, bound to 127.0.0.1:8888
+- [MCP server source](app/server.py): FastMCP tool definitions (add_memory, search_memory, list_memories, delete_memory)
+
+## Optional
+
+- [License (Apache-2.0)](LICENSE)

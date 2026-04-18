@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>mem0-mcp — سرور حافظه بلندمدت برای MCP</title>
+<meta name="description" content="یک سرور MCP داکری که به هر کلاینت پروتکل زمینه مدل، حافظه‌ای ماندگار و چند-کاربره می‌دهد. mem0 و Qdrant را روی ماشین خودتان بسته‌بندی می‌کند." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://cocodedk.github.io/mem0-mcp/fa/" />
+<link rel="alternate" hreflang="en" href="https://cocodedk.github.io/mem0-mcp/" />
+<link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/mem0-mcp/fa/" />
+<link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/mem0-mcp/" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="mem0-mcp" />
+<meta property="og:title" content="mem0-mcp — سرور حافظه بلندمدت برای MCP" />
+<meta property="og:description" content="یک سرور MCP داکری که به هر کلاینت MCP حافظه‌ای ماندگار و چند-کاربره می‌دهد." />
+<meta property="og:url" content="https://cocodedk.github.io/mem0-mcp/fa/" />
+<meta property="og:locale" content="fa_IR" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "mem0-mcp",
+  "description": "یک سرور MCP داکری که به هر کلاینت پروتکل زمینه‌ی مدل، حافظه‌ای بلندمدت و ماندگار می‌دهد.",
+  "url": "https://cocodedk.github.io/mem0-mcp/fa/",
+  "downloadUrl": "https://github.com/cocodedk/mem0-mcp",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Linux, macOS, Windows",
+  "inLanguage": "fa",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": {
+    "@type": "Person",
+    "name": "بابک بندپی",
+    "url": "https://cocode.dk",
+    "sameAs": ["https://linkedin.com/in/babakbandpey", "https://github.com/cocodedk"]
+  },
+  "codeRepository": "https://github.com/cocodedk/mem0-mcp"
+}
+</script>
+</head>
+<body>
+<a href="../" class="lang">English</a>
+
+<main class="container">
+  <header class="hero">
+    <div class="hero__meta">
+      <span class="reveal reveal-1">MEM0 · MCP · کاتالوگ شماره ۰۰۰۱</span>
+      <span class="reveal reveal-1">مونتاژ ۲۰۲۶ · Cocode · کپنهاگ</span>
+    </div>
+    <h1 class="hero__title reveal reveal-2">mem0-mcp</h1>
+    <p class="hero__subtitle reveal reveal-3">آرشیوی برای آنچه هوش مصنوعی‌تان نباید فراموش کند.</p>
+    <p class="hero__byline reveal reveal-4">نگهداری توسط <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">بابک بندپی</a> &middot; <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a> &middot; Apache-2.0</p>
+    <div class="hero__stamp stamp-in">Ad Perpetuam</div>
+  </header>
+
+  <section>
+    <p class="section__num">۰۱ &middot; درباره</p>
+    <h2 class="section__title">این چیست.</h2>
+    <div class="prose">
+      <p>یک سرور MCP داکری که به هر کلاینت پروتکل زمینه‌ی مدل، حافظه‌ای <em>بلندمدت</em> می‌دهد. این برنامه <a href="https://github.com/mem0ai/mem0" target="_blank" rel="noreferrer">mem0</a> و <a href="https://qdrant.tech" target="_blank" rel="noreferrer">Qdrant</a> را در یک نقطه‌ی پایانی در <code>http://127.0.0.1:8888/mcp</code> بسته‌بندی می‌کند &mdash; کاملاً روی ماشین خودتان اجرا می‌شود و بر اساس کاربر و پروژه ایندکس می‌گردد.</p>
+      <p>هر واقعیتی که ذخیره کنید، پس از بازنشانی پنجره‌ی زمینه، راه‌اندازی مجدد پردازه و تعویض کلاینت باقی می‌ماند. پایگاه داده فایلی در <code>./data/</code> است. هیچ‌چیز از میزبان خارج نمی‌شود جز فراخوانی‌های مدل جاسازی.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section__num">۰۲ &middot; ابزارهای در دسترس</p>
+    <h2 class="section__title">چهار فعل.</h2>
+    <ul class="tools">
+      <li><code>add_memory(content, user_id, project)</code> <span>ذخیره‌ی یک واقعیت</span></li>
+      <li><code>search_memory(query, user_id, project, top_k)</code> <span>بازیابی معنایی</span></li>
+      <li><code>list_memories(user_id, project, top_k)</code> <span>فهرست‌سازی</span></li>
+      <li><code>delete_memory(memory_id)</code> <span>فراموشی</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="section__num">۰۳ &middot; نصب</p>
+    <h2 class="section__title">سه خط.</h2>
+<pre><code>git clone https://github.com/cocodedk/mem0-mcp.git
+cd mem0-mcp &amp;&amp; cp .env.example .env   # OPENAI_API_KEY را وارد کنید
+docker compose up -d</code></pre>
+    <div class="prose">
+      <p style="margin-top: 28px;">Qdrant در پس‌زمینه اجرا می‌شود. سرور MCP روی <code>127.0.0.1:8888</code> گوش می‌دهد. این اشتباه نیست.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section__num">۰۴ &middot; اتصال</p>
+    <h2 class="section__title">از هر کلاینت MCP.</h2>
+<pre><code>{
+  "mcpServers": {
+    "memory": {
+      "url": "http://127.0.0.1:8888/mcp"
+    }
+  }
+}</code></pre>
+  </section>
+
+  <section>
+    <p class="section__num">۰۵ &middot; زمینه</p>
+    <h2 class="section__title">چرا مهم است.</h2>
+    <div class="prose">
+      <p>گفت‌وگوها تمام می‌شوند. پنجره‌های زمینه بسته می‌شوند. اما بعضی واقعیت‌ها &mdash; ترجیحات، تصمیم‌ها، اصلاحات، حوادث گذشته &mdash; شایسته‌ی زنده ماندن پس از جلسه‌اند. این سرور آن‌ها را در پایگاه برداری خودتان نگه می‌دارد، بر اساس اینکه شما کی هستید و در کدام پروژه کار می‌کنید ایندکس می‌کند، و توسط هر کلاینتی که MCP را می‌فهمد قابل بازیابی است.</p>
+      <p><strong>نکته‌ی امنیتی.</strong> این نقطه‌ی پایانی هیچ احراز هویتی ندارد. به صورت طراحی‌شده به <code>127.0.0.1</code> متصل است. این پیشوند را تغییر ندهید. پورت ۸۸۸۸ را به صورت عمومی در معرض نگذارید. این را روی ماشین مشترک بدون فایروال اجرا نکنید.</p>
+    </div>
+  </section>
+
+  <div class="ghost" aria-hidden="true">یادآور.</div>
+</main>
+
+<footer class="container">
+  <span>Apache-2.0 &middot; &copy; ۱۴۰۵ <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a></span>
+  <span><a href="https://github.com/cocodedk/mem0-mcp" target="_blank" rel="noreferrer">منبع در گیت‌هاب</a></span>
+  <span>ساخته شده توسط <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">بابک بندپی</a></span>
+</footer>
+</body>
+</html>

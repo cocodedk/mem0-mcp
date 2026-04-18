@@ -2,6 +2,11 @@
 
 A Model Context Protocol (MCP) server that wraps [mem0ai](https://github.com/mem0ai/mem0) with a local [Qdrant](https://qdrant.tech) vector store, exposing long-term memory tools (`add_memory`, `search_memory`, `list_memories`, `delete_memory`) to any MCP-aware client over HTTP. Built with [FastMCP](https://gofastmcp.com) on Python 3.11 and shipped as a Docker image.
 
+## Website
+
+- [English](https://cocodedk.github.io/mem0-mcp/)
+- [فارسی (Persian)](https://cocodedk.github.io/mem0-mcp/fa/)
+
 ## Docker
 
 The fastest way to run mem0-mcp is via `docker compose`. It launches Qdrant and the MCP server side-by-side, binding to `127.0.0.1:8888`.

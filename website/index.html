@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>mem0-mcp — a long-term memory MCP server</title>
+<meta name="description" content="A Dockerized MCP server that gives any Model Context Protocol client a durable, per-user memory. Wraps mem0 and Qdrant, runs on your own machine." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://cocodedk.github.io/mem0-mcp/" />
+<link rel="alternate" hreflang="en" href="https://cocodedk.github.io/mem0-mcp/" />
+<link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/mem0-mcp/fa/" />
+<link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/mem0-mcp/" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="mem0-mcp" />
+<meta property="og:title" content="mem0-mcp — a long-term memory MCP server" />
+<meta property="og:description" content="A Dockerized MCP server that gives any Model Context Protocol client a durable, per-user memory." />
+<meta property="og:url" content="https://cocodedk.github.io/mem0-mcp/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="fa_IR" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="mem0-mcp — a long-term memory MCP server" />
+<meta name="twitter:description" content="A Dockerized MCP server that gives any Model Context Protocol client a durable, per-user memory." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "mem0-mcp",
+  "description": "A Dockerized MCP server that gives any Model Context Protocol client a durable, per-user memory. Wraps mem0 and Qdrant, runs on your own machine.",
+  "url": "https://cocodedk.github.io/mem0-mcp/",
+  "downloadUrl": "https://github.com/cocodedk/mem0-mcp",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Linux, macOS, Windows",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": {
+    "@type": "Person",
+    "name": "Babak Bandpey",
+    "url": "https://cocode.dk",
+    "sameAs": ["https://linkedin.com/in/babakbandpey", "https://github.com/cocodedk"]
+  },
+  "codeRepository": "https://github.com/cocodedk/mem0-mcp"
+}
+</script>
+</head>
+<body>
+<a href="fa/" class="lang">فارسی</a>
+
+<main class="container">
+  <header class="hero">
+    <div class="hero__meta">
+      <span class="reveal reveal-1">MEM0 · MCP · CATALOG &#8470; 0001</span>
+      <span class="reveal reveal-1">Assembled 2026 · Cocode · Copenhagen</span>
+    </div>
+    <h1 class="hero__title reveal reveal-2">mem0-mcp</h1>
+    <p class="hero__subtitle reveal reveal-3">An archive for the things your AI should not forget.</p>
+    <p class="hero__byline reveal reveal-4">Maintained by <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">Babak Bandpey</a> &middot; <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a> &middot; Apache-2.0</p>
+    <div class="hero__stamp stamp-in">Ad Perpetuam</div>
+  </header>
+
+  <section>
+    <p class="section__num">01 &middot; About</p>
+    <h2 class="section__title">What it is.</h2>
+    <div class="prose">
+      <p>A Dockerized MCP server that gives any Model Context Protocol client a <em>long-term</em> memory. It wraps <a href="https://github.com/mem0ai/mem0" target="_blank" rel="noreferrer">mem0</a> and <a href="https://qdrant.tech" target="_blank" rel="noreferrer">Qdrant</a> into a single endpoint at <code>http://127.0.0.1:8888/mcp</code> &mdash; running entirely on your own machine, indexed per user and per project.</p>
+      <p>Every fact you store survives context-window resets, process restarts, and client switches. The database is a file in <code>./data/</code>. Nothing leaves the host except calls to your configured embedder.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section__num">02 &middot; Tools exposed</p>
+    <h2 class="section__title">Four verbs.</h2>
+    <ul class="tools">
+      <li><code>add_memory(content, user_id, project)</code> <span>store a fact</span></li>
+      <li><code>search_memory(query, user_id, project, top_k)</code> <span>semantic retrieval</span></li>
+      <li><code>list_memories(user_id, project, top_k)</code> <span>enumerate</span></li>
+      <li><code>delete_memory(memory_id)</code> <span>forget</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="section__num">03 &middot; Install</p>
+    <h2 class="section__title">Three lines.</h2>
+<pre><code>git clone https://github.com/cocodedk/mem0-mcp.git
+cd mem0-mcp &amp;&amp; cp .env.example .env   # add your OPENAI_API_KEY
+docker compose up -d</code></pre>
+    <div class="prose">
+      <p style="margin-top: 28px;">Qdrant runs in the background. The MCP server listens on loopback <code>127.0.0.1:8888</code>. That is not a mistake.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section__num">04 &middot; Connect</p>
+    <h2 class="section__title">From any MCP client.</h2>
+<pre><code>{
+  "mcpServers": {
+    "memory": {
+      "url": "http://127.0.0.1:8888/mcp"
+    }
+  }
+}</code></pre>
+  </section>
+
+  <section>
+    <p class="section__num">05 &middot; Context</p>
+    <h2 class="section__title">Why bother.</h2>
+    <div class="prose">
+      <p>Conversations end. Context windows close. But some facts &mdash; preferences, decisions, corrections, past incidents &mdash; deserve to outlast the session. This server keeps them in your own vector store, indexed by who you are and which project you are in, retrievable by any client that speaks MCP.</p>
+      <p><strong>Security note.</strong> The endpoint has no authentication. It binds to <code>127.0.0.1</code> by design. Do not change that prefix. Do not expose port 8888 publicly. Do not run this on a shared machine without firewalling.</p>
+    </div>
+  </section>
+
+  <div class="ghost" aria-hidden="true">Remember.</div>
+</main>
+
+<footer class="container">
+  <span>Apache-2.0 &middot; &copy; 2026 <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a></span>
+  <span><a href="https://github.com/cocodedk/mem0-mcp" target="_blank" rel="noreferrer">Source on GitHub</a></span>
+  <span>Created by <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">Babak Bandpey</a></span>
+</footer>
+</body>
+</html>

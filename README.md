@@ -4,8 +4,8 @@ A Model Context Protocol (MCP) server that wraps [mem0ai](https://github.com/mem
 
 ## Website
 
-- [English](https://cocodedk.github.io/mem0-mcp/)
-- [فارسی (Persian)](https://cocodedk.github.io/mem0-mcp/fa/)
+- [English](https://mem0.cocode.dk/)
+- [فارسی (Persian)](https://mem0.cocode.dk/fa/)
 
 ## Docker
 

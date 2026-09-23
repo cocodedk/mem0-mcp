@@ -27,6 +27,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="https://brand.cocode.dk/v1.css">
+<script type="module" src="https://brand.cocode.dk/v1.js"></script>
 
 <script type="application/ld+json">
 {
@@ -50,7 +52,11 @@
 </script>
 </head>
 <body>
-<a href="fa/" class="lang">فارسی</a>
+<cocode-head project="mem0-mcp" accent="#2a4b86" on-accent="#f1ebe0">
+  <a href="https://cocode.dk">cocode.dk</a>
+  <span class="on">EN</span>
+  <a href="fa/" hreflang="fa">FA</a>
+</cocode-head>
 
 <main class="container">
   <header class="hero">
@@ -120,9 +126,11 @@ docker compose up -d</code></pre>
 </main>
 
 <footer class="container">
-  <span>Apache-2.0 &middot; &copy; 2026 <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a></span>
-  <span><a href="https://github.com/cocodedk/mem0-mcp" target="_blank" rel="noreferrer">Source on GitHub</a></span>
-  <span>Created by <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">Babak Bandpey</a></span>
+  <span>Apache-2.0</span>
 </footer>
+
+<cocode-foot repo="cocodedk/mem0-mcp">
+  <a href="https://cocode.dk">cocode.dk</a>
+</cocode-foot>
 </body>
 </html>

@@ -37,6 +37,13 @@ a:hover { background-size: 100% 1px; }
 
 .container { max-width: 880px; margin: 0 auto; padding: 48px 32px; position: relative; }
 
+/* .ghost (below) is position:absolute against this element - its nearest positioned
+   ancestor - and its huge clamp()-driven font-size pushes it well past the column at
+   wide viewports, widening the whole page. Clipping it here contains the bleed without
+   affecting anything else; overflow-x:clip (not hidden) avoids turning this into a
+   scroll container or forcing overflow-y to auto. */
+main.container { overflow-x: clip; }
+
 /* The cocode.dk frame (brand.cocode.dk) lines up with this column; keep the gutters in step. */
 cocode-head, cocode-foot { --cocode-max: 880px; --cocode-gutter: 32px; }
 

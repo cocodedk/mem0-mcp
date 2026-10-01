@@ -2,7 +2,7 @@ services:
   qdrant:
     image: qdrant/qdrant:latest
     container_name: mem0-qdrant
-    restart: on-failure
+    restart: unless-stopped
     ports:
       - "127.0.0.1:6333:6333"
     volumes:
@@ -11,7 +11,7 @@ services:
   mem0-mcp:
     build: ./app
     container_name: mem0-mcp
-    restart: on-failure
+    restart: unless-stopped
     ports:
       - "127.0.0.1:8888:8080"
     env_file: .env
